@@ -60,7 +60,7 @@ router.get('/post/:id', async (req, res) => {
 
     const comment = commentData.get({ plain: true });
 
-    res.render('comment', {
+    res.render('post', {
       ...comment,
       logged_in: req.session.logged_in
     });
