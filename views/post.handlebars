@@ -1,27 +1,14 @@
-<div class="text-center">
+<!--<div class="text-center">-->
+<div class = "row">
   <h2>{{title}}</h2>
   <p>{{content}}</p>
   <p>Created by {{user.username}} on {{format_date date_created}}</p>
+</div>
 
-  {{#if comments.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Comments:</h3>
-
-    {{#each comments as |comment|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/comment/{{comment.id}}">{{comment.content}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
-
+<div class="row mt-4">
   <div class="col-md-6">
     <h3>Add comment:</h3>
+
     <form class="form new-comment-form">
       <div class="form-group">
         <label for="comment-content">Comment:</label>
@@ -32,6 +19,23 @@
       </div>
     </form>
   </div>
+  
+  {{#if comments.length}}
+  <div class="col-md-6 comment-list">
+    <h3>Current Comments:</h3>
+
+    {{#each comments as |comment|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <p>{{comment.content}}</p>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{comment.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
 </div>
 
 <script src="./js/post.js"></script>
