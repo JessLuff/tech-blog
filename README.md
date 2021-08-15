@@ -1,9 +1,5 @@
 # Tech Blog
 
-## Badges
-
-![Github license](https://img.shields.io/badge/license-APACHE-2.0-blue.svg)
-
 ## Description
 
 This project is a basic Tech Blog that allows users to sign in, and create blog posts.
